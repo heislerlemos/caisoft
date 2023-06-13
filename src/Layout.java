@@ -4,29 +4,44 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.InetAddress;
 import javax.swing.JTextArea;
+
+
+
 public class Layout extends JFrame {
     public Layout() {
        // JFrame frame = new JFrame("DNS CHECKER");
         this.setTitle("CAI SOFT");
-        this.setSize(100,100);
+        this.setSize(600,350);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setBackground(new Color(208,208,208));
         this.setLayout(new FlowLayout());
 
-        JLabel name = new JLabel("Insira o registo txt :");
-        this.add(name);
 
-        JTextField fieldname = new JTextField(30);
-        this.add(fieldname);
+
+        JPanel panel = new JPanel();
+        panel.setPreferredSize(new Dimension(550,250));
+        panel.setBackground(Color.gray);
+        panel.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 10));
+
+
+
+    //    JLabel title = new JLabel("Check you dns records ! ");
+    //    panel.add(title);
+
+
+        JLabel name = new JLabel("Insira o registo de dns  :");
+        panel.add(name);
+
+        JTextField fieldname = new JTextField(10);
+        panel.add(fieldname);
 
         JButton b = new JButton("Procurar o registo");
+        panel.add(b);
 
-        JTextArea area=new JTextArea("output of the record");
-        area.setBounds(10,30, 200,200);
-        this.add(area);
-        this.setSize(300,400);
+        JTextArea area=new JTextArea(5, 46);
+        panel.add(area);
+        panel.setSize(300,400);
 
-        this.setVisible(true);
 
         b.addActionListener(new ActionListener() {
             @Override
@@ -36,7 +51,7 @@ public class Layout extends JFrame {
                 try {
                     InetAddress address = InetAddress.getByName(fieldname.getText());
                     System.out.println("This is the record " + address);
-                    JOptionPane.showMessageDialog(null, address);
+                    //JOptionPane.showMessageDialog(null, address);
                     area.setText("host value " + address);
 
 
@@ -52,8 +67,9 @@ public class Layout extends JFrame {
 
 
         });
-        this.add(b);
 
+        this.setResizable(false);
+        this.add(panel);
         this.setVisible(true);
 
 

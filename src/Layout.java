@@ -14,6 +14,7 @@ import org.xbill.DNS.lookup.LookupSession;
 import org.xbill.DNS.Record;
 import org.xbill.DNS.Name;
 import org.xbill.DNS.MXRecord;
+import javax.swing.Box;
 
 public class Layout extends JFrame {
     public Layout() {
@@ -23,13 +24,15 @@ public class Layout extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setBackground(new Color(208,208,208));
         this.setLayout(new FlowLayout());
+        this.setLocationRelativeTo(null);
 
-
+        String heisler = "heisler";
 
         JPanel panel = new JPanel();
         panel.setPreferredSize(new Dimension(550,250));
+        panel.add(Box.createVerticalStrut(50));
         panel.setBackground(new Color(1, 50, 32));
-        panel.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 10));
+        panel.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 10));
 
 
 
@@ -51,7 +54,8 @@ public class Layout extends JFrame {
         panel.add(area);
         panel.setSize(300,400);
 
-    // Build a port tester with telnet 
+
+        // Build a port tester with telnet
         b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -107,7 +111,6 @@ public class Layout extends JFrame {
 
 
         });
-
         this.setResizable(false);
         this.add(panel);
         this.setVisible(true);

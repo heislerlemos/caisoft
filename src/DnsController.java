@@ -1,22 +1,23 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.InetAddress;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+
 import org.xbill.DNS.lookup.LookupSession;
 import org.xbill.DNS.Record;
 import org.xbill.DNS.Name;
 import org.xbill.DNS.MXRecord;
 
 
-public class Dns implements ActionListener {
+public class DnsController implements ActionListener {
 
+
+
+
+// Dns checking function
 
     @Override
     public void actionPerformed(ActionEvent e)
     {
-
-
                 System.out.println("Searching for the record ip : " + Layout.filenames.getText());
 
                 try {
@@ -48,19 +49,13 @@ public class Dns implements ActionListener {
                                     })
                             .toCompletableFuture()
                             .get();
-
-
-
                 }
                 catch(Exception c) {
                     System.out.println("Can't find the record in :");
-
                 }
 
-
-
             }
-
+//      End of dns checking function
 
 
 }

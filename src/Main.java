@@ -1,10 +1,9 @@
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-       Layout layout  = new Layout();
-       Dns dns = new Dns();
-
-
+           Layout frame  = new Layout();
+           Dns dns = new Dns();
 
     }
 }

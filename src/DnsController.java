@@ -18,6 +18,7 @@ public class DnsController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e)
     {
+
                 System.out.println("Searching for the record ip : " + Layout.filenames.getText());
 
                 try {
@@ -53,7 +54,6 @@ public class DnsController implements ActionListener {
                 catch(Exception c) {
                     System.out.println("Can't find the record in :");
                 }
-
             }
 //      End of dns checking function
 

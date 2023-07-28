@@ -33,11 +33,13 @@ public class Dns implements ActionListener {
                                                 System.out.println(mxLookup + " has no MX");
                                                 Layout.area.setText(mxLookup + " has no MX" );
 
+
                                             } else {
                                                 for (Record rec : answers.getRecords()) {
                                                     MXRecord mx = ((MXRecord) rec);
                                                     System.out.println("Host " + mx.getTarget() + " has preference " + mx.getPriority());
                                                     Layout.area.setText("IP do Host : " + address +  "\n"  + "Email do Host : " + mx.getTarget()  );
+
                                                 }
                                             }
                                         } else {

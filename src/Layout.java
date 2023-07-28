@@ -15,6 +15,7 @@ public class Layout extends JFrame {
 
     public static JTextField filenames;
     public static JTextArea area;
+    public static JPanel panel;
     public Layout() {
 
 
@@ -54,10 +55,9 @@ public class Layout extends JFrame {
 
 
 
-        JTextArea area =new JTextArea(5, 46);
-        panel.add(area);
+        area = new JTextArea(5, 46);
         panel.setSize(300,400);
-
+        panel.add(area);
 
 
         // Build a port tester with telnet

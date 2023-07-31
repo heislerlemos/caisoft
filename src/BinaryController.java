@@ -13,7 +13,7 @@ public class BinaryController implements ActionListener {
             int octet = Integer.parseInt(string);
             String binaryOctet = Integer.toBinaryString(octet);
             System.out.println(binaryOctet);
-            Layout.areabinary.setText(binaryOctet);
+            Layout.areabinary.append(binaryOctet  + "\n" );
         }
     }
 

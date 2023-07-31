@@ -10,10 +10,11 @@ public class BinaryController implements ActionListener {
         String[] octetArray = ip.split("\\.");
         for (String string : octetArray)
         {
+
             int octet = Integer.parseInt(string);
             String binaryOctet = Integer.toBinaryString(octet);
             System.out.println(binaryOctet);
-            Layout.areabinary.append(binaryOctet  + "\n" );
+            Layout.areabinary.append(octet + " : " +  binaryOctet  + "\n" );
         }
     }
 

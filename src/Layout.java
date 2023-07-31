@@ -9,12 +9,13 @@ public class Layout extends JFrame {
         public static JTextArea areabinary;
 
         public Layout() {
+
             this.setTitle("COMUNIDADE ANGOLANA DE INFORMATICA SOFTWARE \uD83D\uDCDF ");
-        this.setSize(600,400);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.getContentPane().setBackground(new Color(105,105,105));
-        this.setLayout(new FlowLayout());
-        this.setLocationRelativeTo(null);
+            this.setSize(600,400);
+            this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            this.getContentPane().setBackground(new Color(105,105,105));
+            this.setLayout(new FlowLayout());
+            this.setLocationRelativeTo(null);
 
           JMenuBar  menubar = new JMenuBar();
             this.setJMenuBar(menubar);

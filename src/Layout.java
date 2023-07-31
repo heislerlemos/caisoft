@@ -1,28 +1,36 @@
 import java.awt.*;
-import javax.swing.JTextArea;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.Box;
+import javax.swing.*;
 
 
 public class Layout extends JFrame {
         public static JTextField filenames;
         public static JTextArea area;
-    public static JTextField filenamesbinary;
-    public static JTextArea areabinary;
+        public static JTextField filenamesbinary;
+        public static JTextArea areabinary;
 
         public Layout() {
-
-        this.setTitle("COMUNIDADE ANGOLANA DE INFORMATICA SOFTWARE \uD83D\uDCDF ");
+            this.setTitle("COMUNIDADE ANGOLANA DE INFORMATICA SOFTWARE \uD83D\uDCDF ");
         this.setSize(600,400);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.getContentPane().setBackground(new Color(0, 128, 128));
+        this.getContentPane().setBackground(new Color(105,105,105));
         this.setLayout(new FlowLayout());
         this.setLocationRelativeTo(null);
 
+          JMenuBar  menubar = new JMenuBar();
+            this.setJMenuBar(menubar);
+
+
+            JMenu network = new JMenu("Network Tools");
+            this.setJMenuBar(menubar);
+            menubar.add(network);
+
+            JMenu inventory = new JMenu("Inventory");
+            this.setJMenuBar(menubar);
+            menubar.add(inventory);
+
+            JMenu about = new JMenu("About");
+            this.setJMenuBar(menubar);
+            menubar.add(about);
 
         JPanel panel = new JPanel();
         panel.setPreferredSize(new Dimension(580,370));

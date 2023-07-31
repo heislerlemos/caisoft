@@ -13,6 +13,7 @@ public class Layout extends JFrame {
         public static JTextArea area;
     public static JTextField filenamesbinary;
     public static JTextArea areabinary;
+
         public Layout() {
 
         this.setTitle("COMUNIDADE ANGOLANA DE INFORMATICA SOFTWARE \uD83D\uDCDF ");
@@ -21,6 +22,7 @@ public class Layout extends JFrame {
         this.getContentPane().setBackground(new Color(0, 128, 128));
         this.setLayout(new FlowLayout());
         this.setLocationRelativeTo(null);
+
 
         JPanel panel = new JPanel();
         panel.setPreferredSize(new Dimension(580,370));
@@ -65,14 +67,17 @@ public class Layout extends JFrame {
             bbinary.addActionListener(new BinaryController());
             panel.add(bbinary);
 
+
+            JButton cbinary = new JButton("Apagar registo");
+            cbinary.addActionListener(new BinaryClearController());
+            panel.add(cbinary);
+
+
             areabinary = new JTextArea(5, 46);
             panel.setSize(300,400);
             panel.add(areabinary);
 
-
 //      End of dns check window
-
-
             this.setResizable(false);
         this.add(panel);
         this.setVisible(true);

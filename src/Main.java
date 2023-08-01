@@ -3,6 +3,7 @@ public class Main {
            Layout frame  = new Layout();
            DnsController dns = new DnsController();
            BinaryController binary = new BinaryController();
+           InventoryView inventory = new InventoryView();
 
     }
 }

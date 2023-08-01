@@ -8,6 +8,11 @@ public class Layout extends JFrame {
         public static JTextField filenamesbinary;
         public static JTextArea areabinary;
 
+        public static JPanel panel;
+
+
+
+
         public Layout() {
 
             this.setTitle("COMUNIDADE ANGOLANA DE INFORMATICA SOFTWARE \uD83D\uDCDF ");
@@ -17,23 +22,23 @@ public class Layout extends JFrame {
             this.setLayout(new FlowLayout());
             this.setLocationRelativeTo(null);
 
-          JMenuBar  menubar = new JMenuBar();
+     JMenuBar menubar = new JMenuBar();
             this.setJMenuBar(menubar);
 
 
-            JMenu network = new JMenu("Network Tools");
-            this.setJMenuBar(menubar);
-            menubar.add(network);
+           JMenu menu = new JMenu("Menu");
+            menubar.add(menu);
+            JMenuItem menuItem = new JMenuItem("Network");
+            //menuItem.addActionListener(new InventoryView());
+            menuItem.addActionListener(new NetworkView());
+            menu.add(menuItem);
+            JMenuItem menuInventory = new JMenuItem("Inventory");
+            menuInventory.addActionListener(new InventoryView());
+            menu.add(menuInventory);
 
-            JMenu inventory = new JMenu("Inventory");
-            this.setJMenuBar(menubar);
-            menubar.add(inventory);
 
-            JMenu about = new JMenu("About");
-            this.setJMenuBar(menubar);
-            menubar.add(about);
 
-        JPanel panel = new JPanel();
+         panel = new JPanel();
         panel.setPreferredSize(new Dimension(580,370));
         panel.add(Box.createVerticalStrut(50));
         panel.setBackground(new Color(64,64,64));
@@ -87,9 +92,12 @@ public class Layout extends JFrame {
             panel.add(areabinary);
 
 //      End of dns check window
+
             this.setResizable(false);
-        this.add(panel);
-        this.setVisible(true);
+            this.add(panel);
+            this.setVisible(true);
+
+
 
     }
 

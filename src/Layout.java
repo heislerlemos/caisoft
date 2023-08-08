@@ -10,19 +10,21 @@ public class Layout extends JFrame {
 
         public static JPanel panel;
 
+        public static JMenuBar menubar;
+
 
 
 
         public Layout() {
 
             this.setTitle("COMUNIDADE ANGOLANA DE INFORMATICA SOFTWARE \uD83D\uDCDF ");
-            this.setSize(600,400);
+            this.setSize(900,500);
             this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             this.getContentPane().setBackground(new Color(105,105,105));
             this.setLayout(new FlowLayout());
             this.setLocationRelativeTo(null);
 
-     JMenuBar menubar = new JMenuBar();
+     menubar = new JMenuBar();
             this.setJMenuBar(menubar);
 
 
@@ -36,10 +38,13 @@ public class Layout extends JFrame {
             menuInventory.addActionListener(new InventoryView());
             menu.add(menuInventory);
 
-
+            JPanel panel2 = new JPanel();
+            panel2.setLayout(new GridLayout(3, 2, 10, 10));
+// ...
+         //   panel2.setBorder(new EmptyBorder(50, 50, 50, 50));
 
          panel = new JPanel();
-        panel.setPreferredSize(new Dimension(580,370));
+        panel.setPreferredSize(new Dimension(680,450));
         panel.add(Box.createVerticalStrut(50));
         panel.setBackground(new Color(64,64,64));
         panel.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 10));
@@ -95,6 +100,7 @@ public class Layout extends JFrame {
 
             this.setResizable(false);
             this.add(panel);
+            this.add(panel2);
             this.setVisible(true);
 
 

@@ -30,10 +30,10 @@ public class Layout extends JFrame {
 
            JMenu menu = new JMenu("Menu");
             menubar.add(menu);
-            JMenuItem menuItem = new JMenuItem("Network");
+//            JMenuItem menuItem = new JMenuItem("Network");
             //menuItem.addActionListener(new InventoryView());
-            menuItem.addActionListener(new NetworkView());
-            menu.add(menuItem);
+  //          menuItem.addActionListener(new NetworkView());
+    //        menu.add(menuItem);
             JMenuItem menuInventory = new JMenuItem("Inventory");
             menuInventory.addActionListener(new InventoryView());
             menu.add(menuInventory);

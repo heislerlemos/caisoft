@@ -18,12 +18,17 @@ public class InventoryView  implements ActionListener {
             //frame2.getContentPane().setBackground(new Color(255, 192, 203));
             frame2.setLayout(new FlowLayout());
             JPanel newPanel = new JPanel();
+
+            newPanel.setPreferredSize(new Dimension(680,450));
+            newPanel.setBackground(Color.green);
+
+            frame2.add(newPanel);
             frame2.setLocationRelativeTo(null);
             frame2.setResizable(false);
             frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame2.add(Layout.menubar);
+            //frame2.add(Layout.menubar);
 //Creating a button with a text
-                JButton button=new JButton("Close JFrame!");
+                JButton button=new JButton("Fechar Janela");
 //Setting the cursor to the hand symbol
                 button.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
@@ -31,17 +36,32 @@ public class InventoryView  implements ActionListener {
                         frame2.dispose();
                 });
 
-                JLabel label = new JLabel("Enter username:");
-            JTextField userName = new JTextField(20);
-            newPanel.setBackground(Color.RED);
+
+                JLabel label = new JLabel("Artigo");
+                label.setForeground(Color.WHITE);
+            JTextField artigo = new JTextField(20);
+
+
+            JLabel labeldata = new JLabel("Data");
+            labeldata.setForeground(Color.WHITE);
+            JTextField artigodata = new JTextField(20);
+
+
+
+            newPanel.setBackground(new Color(64,64,64));
+            newPanel.add(artigodata);
+            newPanel.add(labeldata);
             newPanel.add(label);
-            newPanel.add(userName); 
+            newPanel.add(artigo);
+            newPanel.add(button);
+
             newPanel.setVisible(true);
+
+
+
+
+
             frame2.setVisible(true);
-            frame2.add(newPanel);
-            frame2.add(label);
-            frame2.add(userName);
-            frame2.add(button);
 
 
 

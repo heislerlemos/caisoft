@@ -21,6 +21,7 @@ public class InventoryView  implements ActionListener {
             frame2.setLocationRelativeTo(null);
             frame2.setResizable(false);
             frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame2.add(Layout.menubar);
 //Creating a button with a text
                 JButton button=new JButton("Close JFrame!");
 //Setting the cursor to the hand symbol

@@ -62,6 +62,8 @@ public class Layout extends JFrame {
 
         JButton b = new JButton("Procurar o registo");
         b.addActionListener(new DnsController());
+        b.setBackground(Color.BLUE);
+        b.setForeground(Color.WHITE);
         panel.add(b);
 
         area = new JTextArea(5, 46);
@@ -75,6 +77,7 @@ public class Layout extends JFrame {
         //      Dns check window
         JLabel namebinary = new JLabel("Insira o ip para conversão  :");
         namebinary.setForeground(Color.WHITE);
+
         panel.add(namebinary);
 
         filenamesbinary = new JTextField(15);
@@ -84,11 +87,15 @@ public class Layout extends JFrame {
 
         JButton bbinary = new JButton("Procurar o registo");
         bbinary.addActionListener(new BinaryController());
+        bbinary.setBackground(Color.BLUE);
+        bbinary.setForeground(Color.WHITE);
         panel.add(bbinary);
 
 
         JButton cbinary = new JButton("Apagar registo");
         cbinary.addActionListener(new BinaryClearController());
+        cbinary.setBackground(Color.RED);
+        cbinary.setForeground(Color.WHITE);
         panel.add(cbinary);
 
 

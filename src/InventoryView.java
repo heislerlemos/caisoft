@@ -6,65 +6,45 @@ import java.awt.*;
 
 
 public class InventoryView  implements ActionListener {
-    public static JPanel panel2;
 
 
 
-        @Override
+    @Override
     public void actionPerformed(ActionEvent e){
-
-            JFrame frame2  = new JFrame();
-            frame2.setSize(900,500);
-            //frame2.getContentPane().setBackground(new Color(255, 192, 203));
-            frame2.setLayout(new FlowLayout());
-            JPanel newPanel = new JPanel();
-
-            newPanel.setPreferredSize(new Dimension(680,450));
-            newPanel.setBackground(Color.green);
-
-            frame2.add(newPanel);
-            frame2.setLocationRelativeTo(null);
-            frame2.setResizable(false);
-            frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            //frame2.add(Layout.menubar);
-//Creating a button with a text
-                JButton button=new JButton("Fechar Janela");
-//Setting the cursor to the hand symbol
-                button.setCursor(new Cursor(Cursor.HAND_CURSOR));
-
-                button.addActionListener(event->{
-                        frame2.dispose();
-                });
+        JFrame frame2 = new JFrame();
+       frame2.setLayout(new FlowLayout());
 
 
-                JLabel label = new JLabel("Artigo");
-                label.setForeground(Color.WHITE);
-            JTextField artigo = new JTextField(20);
+        frame2.setSize(900,500);
+        frame2.setResizable(false);
+        frame2.setLocationRelativeTo(null);
+        Container c = frame2.getContentPane();
 
 
-            JLabel labeldata = new JLabel("Data");
-            labeldata.setForeground(Color.WHITE);
-            JTextField artigodata = new JTextField(20);
+        JLabel titulo = new JLabel("Teste");
+        JTextField titulofield = new JTextField(20) ;
+
+        c.add(titulo);
+        c.add(titulofield);
+        c.add(Box.createVerticalStrut(160));
+        JLabel titulo2 = new JLabel("Teste");
+        JTextField titulofield2 = new JTextField(20) ;
+        c.add(titulo2);
+        c.add(titulofield2);
 
 
+         JButton button=new JButton("Fechar Janela" );
+         button.setBounds(30,21,100, 40);
 
-            newPanel.setBackground(new Color(64,64,64));
-            newPanel.add(artigodata);
-            newPanel.add(labeldata);
-            newPanel.add(label);
-            newPanel.add(artigo);
-            newPanel.add(button);
+         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-            newPanel.setVisible(true);
-
+         button.addActionListener(event->{
+         frame2.dispose();
+         });
 
 
+        c.add(button);
 
-
-            frame2.setVisible(true);
-
-
-
-
+        frame2.setVisible(true);
     }
 }

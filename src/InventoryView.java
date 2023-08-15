@@ -12,39 +12,51 @@ public class InventoryView  implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e){
         JFrame frame2 = new JFrame();
-       frame2.setLayout(new FlowLayout());
 
 
         frame2.setSize(900,500);
         frame2.setResizable(false);
         frame2.setLocationRelativeTo(null);
-        Container c = frame2.getContentPane();
+
+        Container c = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 5));
+        c.setBackground(new Color(94, 115, 117));
 
 
-        JLabel titulo = new JLabel("Teste");
-        JTextField titulofield = new JTextField(20) ;
+        JButton button=new JButton("Fechar Janela" );
+        button.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-        c.add(titulo);
-        c.add(titulofield);
-        c.add(Box.createVerticalStrut(160));
-        JLabel titulo2 = new JLabel("Teste");
-        JTextField titulofield2 = new JTextField(20) ;
-        c.add(titulo2);
-        c.add(titulofield2);
+        button.addActionListener(event->{
+        frame2.dispose();
+        });
 
 
-         JButton button=new JButton("Fechar Janela" );
-         button.setBounds(30,21,100, 40);
+         c.add(button);
 
-         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        c.add(Box.createRigidArea(new Dimension(700,0)));
 
-         button.addActionListener(event->{
-         frame2.dispose();
-         });
+        JLabel numerofunct = new JLabel("Numero :  ");
+        numerofunct.setForeground(Color.WHITE);
+        JTextField numerofunctfield = new JTextField(80 ) ;
+
+        c.add(numerofunct);
+        c.add(numerofunctfield);
 
 
-        c.add(button);
+        JLabel nomefucnt = new JLabel("Nome : ");
+        nomefucnt.setForeground(Color.WHITE);
+        JTextField nomefucntfield = new JTextField(80) ;
+        c.add(nomefucnt);
+        c.add(nomefucntfield);
+        c.add(Box.createVerticalStrut(5));
 
-        frame2.setVisible(true);
+
+     JLabel nomeartigos = new JLabel("Artigos : ");
+     nomeartigos.setForeground(Color.WHITE);
+     JTextField nomeartigosfield = new JTextField(80) ;
+     c.add(nomeartigos);
+     c.add(nomeartigosfield);
+
+    frame2.add(c,BorderLayout.CENTER);
+    frame2.setVisible(true);
     }
 }

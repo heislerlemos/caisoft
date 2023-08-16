@@ -77,7 +77,6 @@ public class Layout extends JFrame {
         //      Dns check window
         JLabel namebinary = new JLabel("Insira o ip para conversão  :");
         namebinary.setForeground(Color.WHITE);
-
         panel.add(namebinary);
 
         filenamesbinary = new JTextField(15);

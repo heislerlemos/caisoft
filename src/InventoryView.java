@@ -6,6 +6,14 @@ import java.awt.*;
 
 
 public class InventoryView  implements ActionListener {
+        public  static JTextField nomeartigosfield;
+
+        public static  JTextField nomefucntfield;
+
+        public static JTextField numerofunctfield;
+
+        public static  JTextField nomedatafied;
+
 
     @Override
     public void actionPerformed(ActionEvent e){
@@ -46,7 +54,7 @@ public class InventoryView  implements ActionListener {
 
         JLabel numerofunct = new JLabel("Numero :  ");
         numerofunct.setForeground(Color.WHITE);
-        JTextField numerofunctfield = new JTextField(70 ) ;
+        numerofunctfield = new JTextField(70 ) ;
 
 
         c.add(numerofunct);
@@ -55,21 +63,21 @@ public class InventoryView  implements ActionListener {
 
         JLabel nomefucnt = new JLabel("Nome :      ");
         nomefucnt.setForeground(Color.WHITE);
-        JTextField nomefucntfield = new JTextField(70) ;
+        nomefucntfield = new JTextField(70) ;
         c.add(nomefucnt);
         c.add(nomefucntfield);
 
 
      JLabel nomeartigos = new JLabel("Artigos :   ");
      nomeartigos.setForeground(Color.WHITE);
-     JTextField nomeartigosfield = new JTextField(70) ;
+     nomeartigosfield = new JTextField(70) ;
      c.add(nomeartigos);
      c.add(nomeartigosfield);
 
 
         JLabel nomedata = new JLabel("Data :       ");
         nomedata.setForeground(Color.WHITE);
-        JTextField nomedatafied = new JTextField(10) ;
+        nomedatafied = new JTextField(10) ;
         c.add(nomedata);
         c.add(nomedatafied);
 
@@ -78,9 +86,9 @@ public class InventoryView  implements ActionListener {
         buttsubmit.setBackground(Color.GREEN);
         buttsubmit.setForeground(Color.WHITE);
 
-        buttsubmit.addActionListener(event->{
-          System.out.println("Submit request");
-        });
+        buttsubmit.addActionListener(new InventoryController());
+
+
         c.add(Box.createRigidArea(new Dimension(850,0)));
         c.add(Box.createRigidArea(new Dimension(850,0)));
 

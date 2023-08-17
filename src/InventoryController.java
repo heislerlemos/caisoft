@@ -28,7 +28,7 @@ public class InventoryController implements ActionListener {
 
             for (String s : numberOfProperty) {
                 Integer id = count += 1;
-                bw.write( s +  " , " );
+                bw.write( s +  "," );
 
 
             }

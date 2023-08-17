@@ -1,30 +1,62 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;  // Import the IOException class to handle errors
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 
 public class InventoryController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
-      String name =  InventoryView.nomeartigosfield.getText();
-       System.out.println(InventoryView.numerofunctfield.getText());
-       System.out.println(InventoryView.nomeartigosfield.getText());
-        System.out.println(InventoryView.nomedatafied.getText());
 
+        //Path fileName = Paths.get("./inventorydb.xml");
 
-        try {
-            File myObj = new File("outputinventory.txt");
-            if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
-            } else {
-                System.out.println("File already exists.");
+        File fout = new File("./inventorydb.xml");
+
+        try (FileOutputStream fos = new FileOutputStream(fout); BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));) {
+            String[] numberOfProperty = new String[4];
+            numberOfProperty[0] = InventoryView.nomeartigosfield.getText();
+            numberOfProperty[1] = InventoryView.nomedatafied.getText();
+            numberOfProperty[2] = InventoryView.nomefucntfield.getText();
+            numberOfProperty[3] = InventoryView.numerofunctfield.getText();
+
+            for (String s : numberOfProperty) {
+                bw.write(s + " , ");
+
             }
-        } catch (IOException d) {
-            System.out.println("An error occurred.");
-            d.printStackTrace();
+        } catch (IOException ignored) {
+
         }
 
 
+        /***
+
+         try {
+
+         Files.writeString(fileName,InventoryView.nomefucntfield.getText());
+         Files.writeString(fileName,InventoryView.nomeartigosfield.getText());
+         Files.writeString(fileName, InventoryView.numerofunctfield.getText());
+         Files.writeString(fileName,InventoryView.nomedatafied.getText());
+
+
+
+
+         } catch (IOException ex) {
+         throw new RuntimeException(ex);
+         }
+
+         String file_content = null;
+
+         try {
+         file_content = Files.readString(fileName);
+         } catch (IOException ex) {
+         throw new RuntimeException(ex);
+         }
+
+         System.out.println("Informação adicionada  : "  + file_content);
+         ***/
     }
 }

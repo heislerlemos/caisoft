@@ -17,6 +17,9 @@ public class InventoryController implements ActionListener {
         File fout = new File("./inventorydb.xml");
 
         try (FileOutputStream fos = new FileOutputStream(fout); BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));) {
+
+            int count = 0;
+
             String[] numberOfProperty = new String[4];
             numberOfProperty[0] = InventoryView.nomeartigosfield.getText();
             numberOfProperty[1] = InventoryView.nomedatafied.getText();
@@ -24,7 +27,9 @@ public class InventoryController implements ActionListener {
             numberOfProperty[3] = InventoryView.numerofunctfield.getText();
 
             for (String s : numberOfProperty) {
-                bw.write(s + " , ");
+                Integer id = count += 1;
+                bw.write( s +  " , " );
+
 
             }
         } catch (IOException ignored) {

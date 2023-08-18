@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Inventory>
+
+
+
+
+
+
+    <User>
+
+
+
+
+
+
+        <Data>2023</Data>
+
+
+
+
+
+        <Funcionario>heisler</Funcionario>
+
+
+
+
+
+        <Artigo>lenovo</Artigo>
+
+
+
+
+
+        <Numero>1</Numero>
+
+
+
+
+
+        <Data>2023</Data>
+
+
+
+
+        <Funcionario>bryan</Funcionario>
+
+
+
+
+        <Artigo>lenovo</Artigo>
+
+
+
+
+        <Numero>2</Numero>
+
+
+
+
+        <Data>2023</Data>
+
+
+
+        <Funcionario>ruth</Funcionario>
+
+
+
+        <Artigo>iphone</Artigo>
+
+
+
+        <Numero>3</Numero>
+
+
+
+        <Data>2021</Data>
+
+
+        <Funcionario>miguel antonio</Funcionario>
+
+
+        <Artigo>computador</Artigo>
+
+
+        <Numero>4</Numero>
+
+
+        <Id>id0</Id>
+
+        <Data>ji</Data>
+
+        <Funcionario>koao</Funcionario>
+
+        <Artigo>jj</Artigo>
+
+        <Numero>4</Numero>
+
+        <Id>id0</Id>
+        <Data>joid</Data>
+        <Funcionario>hei</Funcionario>
+        <Artigo>jifj</Artigo>
+        <Numero>5</Numero>
+    </User>
+
+
+
+
+
+
+</Inventory>

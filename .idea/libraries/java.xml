@@ -6,6 +6,7 @@
       <root url="jar://$USER_HOME$/jar_libries/jar_files/slf4j-simple-2.0.7.jar!/" />
       <root url="jar://$USER_HOME$/jar_libries/jar_files/slf4j.jdk14-1.6.1.jar!/" />
       <root url="jar://$USER_HOME$/jar_libries/xstream-1.4.20.jar!/" />
+      <root url="jar://$USER_HOME$/jar_libries/w3c-dom.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

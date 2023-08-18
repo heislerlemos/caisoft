@@ -1,53 +1,94 @@
-
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.nio.file.StandardOpenOption;
 
 
 public class InventoryController implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
 
-        File fout = new File("./inventorydb.xml");
+        String filePath = "./inventory.xml";
+        File xmlFile = new File(filePath);
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder;
+        try {
+            dBuilder = dbFactory.newDocumentBuilder();
 
-        try (FileOutputStream fos = new FileOutputStream(fout);
-             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos))) {
+            // parse xml file and load into document
+            Document doc = dBuilder.parse(xmlFile);
 
-            int count = 0;
+            doc.getDocumentElement().normalize();
 
-            String[] numberOfProperty = new String[4];
-            numberOfProperty[0] = InventoryView.nomeartigosfield.getText();
-            numberOfProperty[1] = InventoryView.numerofunctfield.getText();
-            numberOfProperty[2] = InventoryView.nomefucntfield.getText();
-            numberOfProperty[3] = InventoryView.nomedatafied.getText();
+      
+            // add new element
+            addElement(doc);
 
+            // write the updated document to file or console
+            writeXMLFile(doc);
 
-            for (String s : numberOfProperty) {
-                Integer id = count += 1;
-
-
-                String filePath = "./inventorydb.xml";
-
-                try(FileWriter fw = new FileWriter(filePath, true);
-                    BufferedWriter writer = new BufferedWriter(fw);) {
-
-                    writer.write(s);
-                }
-
-            }
-
-        } catch (IOException ignored) {
-
+        } catch (ParserConfigurationException | IOException | TransformerException | SAXException e1) {
+            e1.printStackTrace();
         }
+    }
 
-        System.out.println("Dados inseridos");
-        InventoryView.textArea.setText("Dados foram guardados");
+    private void addElement(Document doc) {
+
+        NodeList users = doc.getElementsByTagName("User");
+        Element root = null;
+        int id = 0;
+        // loop for each user
+        for (int i = 0; i < users.getLength(); i++) {
+            root = (Element) users.item(i);
+
+            Element Id = doc.createElement("Id");
+            Id.appendChild(doc.createTextNode("id" + id++));
+            root.appendChild(Id);
 
 
+            Element Data = doc.createElement("Data");
+            Data.appendChild(doc.createTextNode(InventoryView.nomedatafied.getText()));
+            root.appendChild(Data);
+
+            Element Funcionario = doc.createElement("Funcionario");
+            Funcionario.appendChild(doc.createTextNode(InventoryView.nomefucntfield.getText()));
+            root.appendChild(Funcionario);
+
+            Element Artigo = doc.createElement("Artigo");
+            Artigo.appendChild(doc.createTextNode(InventoryView.nomeartigosfield.getText()));
+            root.appendChild(Artigo);
 
 
+            Element Numero = doc.createElement("Numero");
+            Numero.appendChild(doc.createTextNode(InventoryView.numerofunctfield.getText()));
+            root.appendChild(Numero);
+        }
+    }
 
+
+    private void writeXMLFile(Document doc)
+            throws TransformerFactoryConfigurationError, TransformerConfigurationException, TransformerException {
+            doc.getDocumentElement().normalize();
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+
+            StreamResult result = new StreamResult(new File("./inventory.xml"));
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.transform(source, result);
+            System.out.println("XML file updated successfully");
+            InventoryView.textArea.setText("Dados foram guardados");
 
     }
 

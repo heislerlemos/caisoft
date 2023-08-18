@@ -11,6 +11,7 @@ import javax.xml.transform.stream.StreamResult;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class InventoryController implements ActionListener {
@@ -44,14 +45,16 @@ public class InventoryController implements ActionListener {
     private void addElement(Document doc) {
 
         NodeList users = doc.getElementsByTagName("User");
-        Element root = null;
-        int id = 0;
+        Element root;
+        AtomicInteger id= new AtomicInteger(0);
+
+
         // loop for each user
         for (int i = 0; i < users.getLength(); i++) {
             root = (Element) users.item(i);
 
             Element Id = doc.createElement("Id");
-            Id.appendChild(doc.createTextNode("id" + id++));
+            Id.appendChild(doc.createTextNode("id" + id.incrementAndGet()));
             root.appendChild(Id);
 
 
@@ -76,7 +79,7 @@ public class InventoryController implements ActionListener {
 
 
     private void writeXMLFile(Document doc)
-            throws TransformerFactoryConfigurationError, TransformerConfigurationException, TransformerException {
+            throws TransformerFactoryConfigurationError, TransformerException {
             doc.getDocumentElement().normalize();
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();

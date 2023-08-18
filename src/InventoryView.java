@@ -14,6 +14,8 @@ public class InventoryView  implements ActionListener {
 
         public static  JTextField nomedatafied;
 
+        public static JTextArea textArea;
+
 
     @Override
     public void actionPerformed(ActionEvent e){
@@ -44,7 +46,7 @@ public class InventoryView  implements ActionListener {
 
          c.add(button);
 
-        c.add(Box.createRigidArea(new Dimension(850,0)));
+        c.add(Box.createRigidArea(new Dimension(750,0)));
 
         JLabel titulo =  new JLabel("Inventario dos utilizadores ");
         titulo.setForeground(Color.WHITE);
@@ -95,7 +97,7 @@ public class InventoryView  implements ActionListener {
 
         c.add(buttsubmit);
 
-        JTextArea textArea = new JTextArea(15, 80);
+        textArea = new JTextArea(15, 80);
         JScrollPane scrollPane = new JScrollPane(textArea);
         textArea.setEditable(false);
         c.add(textArea);

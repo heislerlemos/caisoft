@@ -42,6 +42,7 @@ public class InventoryController implements ActionListener {
         }
 
         System.out.println("Dados inseridos");
+        InventoryView.textArea.setText("Dados foram guardados");
 
 
 

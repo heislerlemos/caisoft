@@ -44,13 +44,20 @@ public class Layout extends JFrame {
         //   panel2.setBorder(new EmptyBorder(50, 50, 50, 50));
 
         panel = new JPanel();
-        panel.setPreferredSize(new Dimension(680,450));
+        panel.setPreferredSize(new Dimension(670,450));
         panel.add(Box.createVerticalStrut(50));
         panel.setBackground(new Color(64,64,64));
         panel.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 10));
+        panel.add(Box.createRigidArea(new Dimension(175,0)));
 
-
+        JLabel Netname = new JLabel(" Network Tools", SwingConstants.CENTER);
+        Netname.setForeground(Color.WHITE);
+        Netname.setFont(new Font("", Font.PLAIN, 17));
+        panel.add(Netname);
 //      Dns check window
+
+        panel.add(Box.createRigidArea(new Dimension(250,0)));
+
         JLabel name = new JLabel("Insira o registo de dns  :");
         name.setForeground(Color.WHITE);
         panel.add(name);

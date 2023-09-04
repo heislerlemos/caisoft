@@ -48,9 +48,9 @@ public class Layout extends JFrame {
         panel.add(Box.createVerticalStrut(50));
         panel.setBackground(new Color(64,64,64));
         panel.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 10));
-        panel.add(Box.createRigidArea(new Dimension(175,0)));
+        panel.add(Box.createRigidArea(new Dimension(173,0)));
 
-        JLabel Netname = new JLabel(" Network Tools", SwingConstants.CENTER);
+        JLabel Netname = new JLabel("Network Tools", SwingConstants.CENTER);
         Netname.setForeground(Color.WHITE);
         Netname.setFont(new Font("", Font.PLAIN, 17));
         panel.add(Netname);

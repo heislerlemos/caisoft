@@ -85,7 +85,9 @@ public class InventoryController implements ActionListener {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
 
             Transformer transformer = transformerFactory.newTransformer();
-            DOMSource source = new DOMSource(doc);
+
+
+             DOMSource source = new DOMSource(doc);
 
             StreamResult result = new StreamResult(new File("./inventory.xml"));
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
@@ -94,5 +96,9 @@ public class InventoryController implements ActionListener {
             InventoryView.textArea.setText("Dados foram guardados");
 
     }
+
+
+    
+
 
 }

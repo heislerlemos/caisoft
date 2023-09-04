@@ -83,12 +83,18 @@ public class InventoryView  implements ActionListener {
         c.add(nomedata);
         c.add(nomedatafied);
 
-        JButton buttsubmit=new JButton("Submeter" );
+        JButton buttsubmit=new JButton("Guardar" );
         buttsubmit.setCursor(new Cursor(Cursor.HAND_CURSOR));
         buttsubmit.setBackground(Color.GREEN);
         buttsubmit.setForeground(Color.WHITE);
 
         buttsubmit.addActionListener(new InventoryController());
+
+        JButton buttsubmitshow=new JButton("Ver Todos Artigos" );
+        buttsubmitshow.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        buttsubmitshow.setBackground(Color.BLUE);
+        buttsubmitshow.setForeground(Color.WHITE);
+        buttsubmitshow.addActionListener(new InventoryShowController());
 
 
         c.add(Box.createRigidArea(new Dimension(850,0)));
@@ -96,6 +102,7 @@ public class InventoryView  implements ActionListener {
 
 
         c.add(buttsubmit);
+        c.add(buttsubmitshow);
 
         textArea = new JTextArea(15, 80);
         JScrollPane scrollPane = new JScrollPane(textArea);

@@ -1,3 +1,4 @@
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -38,7 +39,7 @@ public class InventoryController implements ActionListener {
             writeXMLFile(doc);
 
         } catch (ParserConfigurationException | IOException | TransformerException | SAXException e1) {
-            e1.printStackTrace();
+           // e1.printStackTrace();
         }
     }
 
@@ -49,9 +50,11 @@ public class InventoryController implements ActionListener {
         AtomicInteger id= new AtomicInteger(0);
 
 
+
         // loop for each user
         for (int i = 0; i < users.getLength(); i++) {
             root = (Element) users.item(i);
+
 
             Element Id = doc.createElement("Id");
             Id.appendChild(doc.createTextNode("id" + id.incrementAndGet()));
@@ -59,20 +62,24 @@ public class InventoryController implements ActionListener {
 
 
             Element Data = doc.createElement("Data");
-            Data.appendChild(doc.createTextNode(InventoryView.nomedatafied.getText()));
+            Data.setAttribute("value", InventoryView.nomedatafied.getText());
+            //Data.appendChild(doc.createTextNode(InventoryView.nomedatafied.getText()));
             root.appendChild(Data);
 
             Element Funcionario = doc.createElement("Funcionario");
-            Funcionario.appendChild(doc.createTextNode(InventoryView.nomefucntfield.getText()));
+            Funcionario.setAttribute("value", InventoryView.nomefucntfield.getText());
+            //Funcionario.appendChild(doc.createTextNode(InventoryView.nomefucntfield.getText()));
             root.appendChild(Funcionario);
 
             Element Artigo = doc.createElement("Artigo");
-            Artigo.appendChild(doc.createTextNode(InventoryView.nomeartigosfield.getText()));
+            Artigo.setAttribute("value",InventoryView.nomeartigosfield.getText());
+            //Artigo.appendChild(doc.createTextNode(InventoryView.nomeartigosfield.getText()));
             root.appendChild(Artigo);
 
 
             Element Numero = doc.createElement("Numero");
-            Numero.appendChild(doc.createTextNode(InventoryView.numerofunctfield.getText()));
+            Numero.setAttribute("value", InventoryView.numerofunctfield.getText());
+            //Numero.appendChild(doc.createTextNode(InventoryView.numerofunctfield.getText()));
             root.appendChild(Numero);
         }
     }

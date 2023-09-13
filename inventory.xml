@@ -1,23 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Inventory>
-        
+                                    
+    
+    
+    
+    
+    
+    
+    
     <User>
+                                    
+        
+        
+        
+        <Id>id1</Id>
+                                
+        
+        
+        <Data value="13-09-2022"/>
+                                
+        
+        
+        <Funcionario value="heisler jorge de lemos stlano"/>
+                                
+        
+        
+        <Artigo value="portatil"/>
+                                
+        
+        
+        <Numero value="01"/>
+                            
+        
+        
+        <Id>id1</Id>
+                        
+        
+        <Data value="13-09-2023"/>
+                        
+        
+        <Funcionario value="bryan"/>
+                        
+        
+        <Artigo value="2"/>
+                        
+        
+        <Numero value="02"/>
+                    
+        
+        <Id>id1</Id>
                 
-        <Id >id1</Id>
+        <Data value="13-0-2023"/>
                 
-        <Data>09-20</Data>
+        <Funcionario value="Joao Miguel"/>
                 
-        <Funcionario value="heisler" />
+        <Artigo value="pc"/>
                 
-        <Artigo>lenovo</Artigo>
-                
-        <Numero>191</Numero>
+        <Numero value="03"/>
             
         <Id>id1</Id>
-        <Data>293</Data>
-        <Funcionario>bryan</Funcionario>
-        <Artigo>mouse</Artigo>
-        <Numero>92</Numero>
+        <Data value="203"/>
+        <Funcionario value="ruth baptista"/>
+        <Artigo value="ipad"/>
+        <Numero value="05"/>
     </User>
-    
+                                
+
+
+
+
+
+
+
 </Inventory>

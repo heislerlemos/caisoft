@@ -6,15 +6,15 @@ import java.awt.*;
 
 
 public class InventoryView  implements ActionListener {
-        public  static JTextField nomeartigosfield;
+    public  static JTextField nomeartigosfield;
 
-        public static  JTextField nomefucntfield;
+    public static  JTextField nomefucntfield;
 
-        public static JTextField numerofunctfield;
+    public static JTextField numerofunctfield;
 
-        public static  JTextField nomedatafied;
+    public static  JTextField nomedatafied;
 
-        public static JTextArea textArea;
+    public static JTextArea textArea;
 
 
     @Override
@@ -40,11 +40,11 @@ public class InventoryView  implements ActionListener {
         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
         button.addActionListener(event->{
-        frame2.dispose();
+            frame2.dispose();
         });
 
 
-         c.add(button);
+        c.add(button);
 
         c.add(Box.createRigidArea(new Dimension(750,0)));
 
@@ -70,11 +70,11 @@ public class InventoryView  implements ActionListener {
         c.add(nomefucntfield);
 
 
-     JLabel nomeartigos = new JLabel("Artigos :   ");
-     nomeartigos.setForeground(Color.WHITE);
-     nomeartigosfield = new JTextField(70) ;
-     c.add(nomeartigos);
-     c.add(nomeartigosfield);
+        JLabel nomeartigos = new JLabel("Artigos :   ");
+        nomeartigos.setForeground(Color.WHITE);
+        nomeartigosfield = new JTextField(70) ;
+        c.add(nomeartigos);
+        c.add(nomeartigosfield);
 
 
         JLabel nomedata = new JLabel("Data :       ");
@@ -108,10 +108,11 @@ public class InventoryView  implements ActionListener {
         JScrollPane scrollPane = new JScrollPane(textArea);
         textArea.setEditable(false);
         c.add(textArea);
+        textArea.add(scrollPane);
 
 
-     frame2.add(c,BorderLayout.CENTER);
-     frame2.setVisible(true);
+        frame2.add(c,BorderLayout.CENTER);
+        frame2.setVisible(true);
 
     }
 }

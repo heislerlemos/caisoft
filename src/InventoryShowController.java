@@ -40,7 +40,7 @@ public class InventoryShowController implements ActionListener {
                        if(detail.getNodeType() == Node.ELEMENT_NODE) {
                            Element detailElement = (Element) detail;
                            System.out.println("     " + detailElement.getTagName() + ": " + detailElement.getAttribute("value"));
-                           InventoryView.textArea.setText("     " + detailElement.getTagName() + ": " + detailElement.getAttribute("value"));
+                           InventoryView.textArea.append( detailElement.getTagName() + ": " + detailElement.getAttribute("value") + "\n");
                        }
 
                    }

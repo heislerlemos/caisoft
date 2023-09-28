@@ -106,6 +106,9 @@ public class InventoryView  implements ActionListener {
         sp = new JScrollPane(textArea);
         sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         textArea = new JTextArea(15, 80);
+        textArea.setForeground(Color.BLUE);
+       // textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
+
 
 
         sp.getViewport().setBackground(Color.WHITE);

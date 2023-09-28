@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Inventory>
-                                    
+                                        
+    
     
     
     
@@ -9,6 +10,32 @@
     
     
     <User>
+                                            
+        
+        
+        
+        
+        <Id>id1</Id>
+                                        
+        
+        
+        
+        <Data value="13-09-2022"/>
+                                        
+        
+        
+        
+        <Funcionario value="heisler jorge de lemos stlano"/>
+                                        
+        
+        
+        
+        <Artigo value="portatil"/>
+                                        
+        
+        
+        
+        <Numero value="01"/>
                                     
         
         
@@ -17,54 +44,55 @@
                                 
         
         
-        <Data value="13-09-2022"/>
+        <Data value="13-09-2023"/>
                                 
         
         
-        <Funcionario value="heisler jorge de lemos stlano"/>
+        <Funcionario value="bryan"/>
                                 
         
         
-        <Artigo value="portatil"/>
+        <Artigo value="2"/>
                                 
         
         
-        <Numero value="01"/>
+        <Numero value="02"/>
                             
         
         
         <Id>id1</Id>
                         
         
-        <Data value="13-09-2023"/>
+        <Data value="13-0-2023"/>
                         
         
-        <Funcionario value="bryan"/>
+        <Funcionario value="Joao Miguel"/>
                         
         
-        <Artigo value="2"/>
+        <Artigo value="pc"/>
                         
         
-        <Numero value="02"/>
+        <Numero value="03"/>
                     
         
         <Id>id1</Id>
                 
-        <Data value="13-0-2023"/>
+        <Data value="203"/>
                 
-        <Funcionario value="Joao Miguel"/>
+        <Funcionario value="ruth baptista"/>
                 
-        <Artigo value="pc"/>
+        <Artigo value="ipad"/>
                 
-        <Numero value="03"/>
+        <Numero value="05"/>
             
         <Id>id1</Id>
-        <Data value="203"/>
-        <Funcionario value="ruth baptista"/>
-        <Artigo value="ipad"/>
+        <Data value="26-09-2023"/>
+        <Funcionario value="ruth baptista sltano"/>
+        <Artigo value="telefone "/>
         <Numero value="05"/>
     </User>
-                                
+                                    
+
 
 
 

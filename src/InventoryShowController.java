@@ -7,6 +7,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -25,6 +26,7 @@ public class InventoryShowController implements ActionListener {
             document.getDocumentElement().normalize();
 
            NodeList userlist =  document.getElementsByTagName("User");
+
 
 
            for(int i = 0; i < userlist.getLength();  i++) {

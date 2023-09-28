@@ -16,6 +16,7 @@ public class InventoryView  implements ActionListener {
 
     public static JTextArea textArea;
 
+    public static JScrollPane sp ;
 
     @Override
     public void actionPerformed(ActionEvent e){
@@ -25,11 +26,10 @@ public class InventoryView  implements ActionListener {
         frame2.setSize(900,500);
         frame2.setResizable(false);
         frame2.setLocationRelativeTo(null);
-
+     //   frame2.setBounds(400, 400, 900, 900);
         Container c = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
         c.setBackground(new Color(105,105,105));
-
-
 
 
         JButton button=new JButton("Fechar Janela" );
@@ -103,15 +103,15 @@ public class InventoryView  implements ActionListener {
 
         c.add(buttsubmit);
         c.add(buttsubmitshow);
-
+        sp = new JScrollPane(textArea);
+        sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         textArea = new JTextArea(15, 80);
-        JScrollPane scrollPane = new JScrollPane(textArea);
-        textArea.setEditable(false);
-        c.add(textArea);
-        textArea.add(scrollPane);
 
 
-        frame2.add(c,BorderLayout.CENTER);
+        sp.getViewport().setBackground(Color.WHITE);
+        sp.getViewport().add(textArea);
+        c.add(sp);
+        frame2.add(c);
         frame2.setVisible(true);
 
     }
